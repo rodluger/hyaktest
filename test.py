@@ -30,5 +30,6 @@ with Pool() as pool:
     # Use the pool to map ``walkers`` onto the function
     res = pool.map(my_function, walkers)
 
+
     print("Time elapsed: %.3f seconds" % (time.time() - tstart))
-    print(res)
+    np.savetxt("data/result.txt", res)
